@@ -1,0 +1,35 @@
+name: Atualizar lista de campanhas
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  build-campaigns:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Gerar campaigns.json
+        run: python3 scripts/build_campaigns.py
+
+      - name: Commitar mudanças (se houver)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add campaigns.json
+          if git diff --cached --quiet; then
+            echo "Nenhuma mudança em campaigns.json — nada a commitar."
+          else
+            git commit -m "chore: atualiza campaigns.json automaticamente"
+            git push
+          fi
