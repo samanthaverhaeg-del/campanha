@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campanha Logística — Retenção Julho 2026 | Qive SMB</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap');
+
+  :root {
+    --orange: #E95A1C;
+    --orange-light: #FFF0E8;
+    --orange-mid: #F97C45;
+    --dark: #1A1A1A;
+    --dark-2: #2E2E2E;
+    --mid: #6B6B6B;
+    --light: #F5F4F0;
+    --border: #E5E3DC;
+    --white: #FFFFFF;
+    --green: #1D7A4B;
+    --green-light: #E6F5EE;
+    --red: #C0392B;
+    --red-light: #FDEDEB;
+    --blue: #1A5FAD;
+    --blue-light: #EAF1FC;
+    --amber: #B85C00;
+    --amber-light: #FFF3E0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--dark);
+    color: var(--white);
+    padding: 56px 48px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: var(--orange);
+    opacity: 0.12;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 20%;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: var(--orange-mid);
+    opacity: 0.08;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    line-height: 1.15;
+    max-width: 640px;
+    margin-bottom: 12px;
+  }
+  .hero h1 span { color: var(--orange-mid); }
+  .hero-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    max-width: 520px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .hero-meta-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.8px; }
+  .hero-meta-value { font-size: 15px; font-weight: 500; }
+
+  /* LAYOUT */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+  .section { padding: 48px 0; }
+  .section + .section { border-top: 1px solid var(--border); }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .section-label .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    flex-shrink: 0;
+  }
+  .section-label h2 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: var(--dark);
+  }
+
+  p { color: var(--mid); margin-bottom: 12px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* CARDS */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  /* INSIGHT BOXES */
+  .insight-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .insight {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .insight.good { border-left: 3px solid var(--green); }
+  .insight.bad { border-left: 3px solid var(--red); }
+  .insight-label { font-size: 11px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
+  .insight.good .insight-label { color: var(--green); }
+  .insight.bad .insight-label { color: var(--red); }
+  .insight p { font-size: 13px; color: var(--dark-2); margin: 0; }
+
+  /* CALENDAR */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .cal-day {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 12px;
+    min-height: 120px;
+  }
+  .cal-day.highlight { border-color: var(--orange); border-top: 3px solid var(--orange); }
+  .cal-day.inactive { background: var(--light); opacity: 0.5; }
+  .cal-date { font-size: 18px; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
+  .cal-day.highlight .cal-date { color: var(--orange); }
+  .cal-weekday { font-size: 10px; color: var(--mid); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 8px; }
+  .cal-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin: 2px 2px 2px 0;
+  }
+  .tag-email { background: var(--blue-light); color: var(--blue); }
+  .tag-inapp { background: var(--amber-light); color: var(--amber); }
+  .tag-off { background: var(--light); color: var(--mid); }
+
+  /* DISPARO CARD */
+  .disparo {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .disparo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--light);
+  }
+  .disparo-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--mid);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .disparo-canal {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  .disparo-date { font-size: 12px; color: var(--mid); }
+  .disparo-body { padding: 20px; }
+  .disparo-title { font-size: 15px; font-weight: 500; color: var(--dark); margin-bottom: 4px; }
+  .disparo-sub { font-size: 13px; color: var(--mid); margin-bottom: 16px; }
+
+  /* COPY BOX */
+  .copy-wrap { position: relative; margin-bottom: 12px; }
+  .copy-box {
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-size: 13px;
+    color: var(--dark-2);
+    line-height: 1.6;
+  }
+  .copy-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 8px;
+  }
+  .copy-subject {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+  .copy-body { white-space: pre-line; }
+
+  .copy-btn {
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--dark);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 7px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.15s;
+  }
+  .copy-btn:hover { background: var(--orange); }
+  .copy-btn.copied { background: var(--green); }
+
+  /* BRIEFING CRIATIVO */
+  .briefing {
+    background: var(--orange-light);
+    border: 1px solid #F5C9AC;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-top: 14px;
+  }
+  .briefing-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--orange);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .briefing table { width: 100%; font-size: 12.5px; border-collapse: collapse; }
+  .briefing td { padding: 5px 0; vertical-align: top; }
+  .briefing td:first-child { width: 120px; color: var(--mid); font-weight: 500; }
+  .briefing td:last-child { color: var(--dark-2); }
+
+  /* KPI TABLE */
+  .kpi-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .kpi-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--dark);
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+  }
+  .kpi-table th:first-child { border-radius: 6px 0 0 0; }
+  .kpi-table th:last-child { border-radius: 0 6px 0 0; }
+  .kpi-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  .kpi-table tr:last-child td { border-bottom: none; }
+  .kpi-table tr:nth-child(even) td { background: var(--light); }
+  .kpi-table .highlight-cell { font-weight: 600; color: var(--orange); }
+
+  /* PROJECAO */
+  .proj-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .proj-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+  .proj-card.featured {
+    background: var(--dark);
+    border-color: var(--dark);
+    color: white;
+  }
+  .proj-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: var(--orange); }
+  .proj-card.featured .proj-num { color: var(--orange-mid); }
+  .proj-desc { font-size: 12px; color: var(--mid); margin-top: 4px; }
+  .proj-card.featured .proj-desc { color: rgba(255,255,255,0.5); }
+  .proj-label { font-size: 13px; font-weight: 500; color: var(--dark); margin-top: 8px; }
+  .proj-card.featured .proj-label { color: white; }
+
+  /* TAGS DE CANAL */
+  .canal-email { background: var(--blue-light); color: var(--blue); }
+  .canal-inapp { background: var(--amber-light); color: var(--amber); }
+
+  /* DIVIDER */
+  .week-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 32px 0 20px;
+  }
+  .week-header .week-num {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--orange);
+    background: var(--orange-light);
+    padding: 4px 12px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .week-header .week-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .week-header .week-theme {
+    font-size: 13px;
+    color: var(--mid);
+    flex-shrink: 0;
+  }
+
+  /* DOC SUMMARY */
+  .doc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .doc-item { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+  .doc-item-label { font-size: 11px; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
+  .doc-item-value { font-size: 14px; color: var(--dark); font-weight: 500; }
+  .doc-item-value.small { font-size: 13px; font-weight: 400; }
+
+  /* CLUSTER BADGES */
+  .cluster-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px; }
+  .cluster-badge {
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+  .cluster-badge.desgaste { background: #FEF3C7; border-left: 3px solid #D97706; }
+  .cluster-badge.critico { background: var(--red-light); border-left: 3px solid var(--red); }
+  .cluster-badge.sensibilidade { background: var(--blue-light); border-left: 3px solid var(--blue); }
+  .cluster-badge.desenvolvimento { background: var(--green-light); border-left: 3px solid var(--green); }
+  .cluster-badge .cb-title { font-weight: 600; font-size: 12px; margin-bottom: 3px; }
+  .cluster-badge .cb-desc { color: var(--mid); font-size: 11px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 28px;
+    font-size: 12px;
+  }
+  footer span { color: var(--orange-mid); }
+
+  hr.subtle { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+  @media (max-width: 700px) {
+    .insight-row, .proj-grid, .doc-grid, .cluster-grid { grid-template-columns: 1fr; }
+    .calendar-grid { grid-template-columns: repeat(3, 1fr); }
+    .hero { padding: 36px 24px 32px; }
+    .container { padding: 0 16px; }
+    .hero-meta { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">Campanha CRM · SMB Retenção · Logística</div>
+    <h1>O frete brasileiro<br>em números:<br><span>inteligência para o setor</span></h1>
+    <p class="hero-sub">Campanha de retenção para clientes do setor de logística — entregando dados inéditos do Panorama de Mercado da Qive para aumentar percepção de valor e engajamento.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Período</span>
+        <span class="hero-meta-value">01 a 29 de Julho de 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Canais</span>
+        <span class="hero-meta-value">E-mail · InApp Banner · InApp Post · InApp Chat</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Objetivo</span>
+        <span class="hero-meta-value">Retenção + Percepção de Valor</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Temática</span>
+        <span class="hero-meta-value">Panorama Logístico Brasil 2024–2025</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DOCUMENTAÇÃO GERAL -->
+<div class="container">
+<div class="section">
+  <div class="section-label"><div class="dot"></div><h2>Documentação da Campanha</h2></div>
+  <h3>Visão geral estratégica</h3>
+  <div class="doc-grid">
+    <div class="doc-item">
+      <div class="doc-item-label">Objetivo</div>
+      <div class="doc-item-value">Aumentar a percepção de valor da Qive junto a clientes de logística em clusters de retenção, utilizando dados inéditos do Panorama Logístico como conteúdo âncora.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-label">Público-alvo</div>
+      <div class="doc-item-value">Clientes SMB ativos no setor de logística, nos clusters de Retenção: Desgaste Econômico, Uso Crítico, Sensibilidade de Preço e Desenvolvimento de Valor.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-label">Canais utilizados</div>
+      <div class="doc-item-value small">E-mail (4 envios, 1 por semana) · InApp Banner (2 ativações) · InApp Post (2 ativações) · InApp Chat (2 ativações)</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-label">Duração</div>
+      <div class="doc-item-value">29 dias úteis — 01 a 29 de Julho de 2026. Sem disparos nos finais de semana. Feriado de 09/07 (Revolução Constitucionalista — SP) desconsiderado nos dias mais críticos.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-label">Temática principal</div>
+      <div class="doc-item-value">194,2 milhões de CTes revelam como o Brasil se move. Dados inéditos sobre volume, rotas, modais, tributação e prazos de pagamento no setor de logística.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-label">KPIs de sucesso</div>
+      <div class="doc-item-value small">Tx. de entrega dos e-mails · Tx. de abertura de e-mails e InApps · Acessos ao capítulo do Panorama · Cliques no link da página geral · Engajamento nos InApp Chats</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 24px;">
+    <div class="doc-item-label" style="margin-bottom:12px; font-size:11px; font-weight:600; color:var(--mid); text-transform:uppercase; letter-spacing:0.8px;">Clusters trabalhados na campanha</div>
+    <div class="cluster-grid">
+      <div class="cluster-badge desgaste">
+        <div class="cb-title" style="color:#92400E;">Desgaste Econômico</div>
+        <div class="cb-desc">Clientes com sinais de insatisfação relacionados a custo-benefício percebido. Conteúdo de valor reforça a relevância da plataforma para o negócio.</div>
+      </div>
+      <div class="cluster-badge critico">
+        <div class="cb-title" style="color:var(--red);">Uso Crítico</div>
+        <div class="cb-desc">Clientes com uso baixo ou instável da plataforma. Dados do setor criam contexto para retomada de engajamento.</div>
+      </div>
+      <div class="cluster-badge sensibilidade">
+        <div class="cb-title" style="color:var(--blue);">Sensibilidade de Preço</div>
+        <div class="cb-desc">Clientes que questionam o valor pago. Inteligência de mercado posiciona a Qive como fonte de dados — não só como ferramenta.</div>
+      </div>
+      <div class="cluster-badge desenvolvimento">
+        <div class="cb-title" style="color:var(--green);">Desenvolvimento de Valor</div>
+        <div class="cb-desc">Clientes em estágio inicial de uso ou engajamento. Panorama serve como ponte para aprofundar conexão com a plataforma.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INSIGHTS DE CAMPANHAS ANTERIORES -->
+<div class="section">
+  <div class="section-label"><div class="dot"></div><h2>Insights das Campanhas Anteriores</h2></div>
+  <h3>O que funciona e o que evitar</h3>
+  <p>Análise consolidada das campanhas históricas do SMB e das campanhas mais recentes de maio e junho de 2026, utilizada para embasar as decisões de copy, assunto, pré-header e cadência desta campanha.</p>
+
+  <div class="insight-row" style="margin-top: 20px;">
+    <div class="insight good">
+      <div class="insight-label">✓ Assuntos com dado específico ou pergunta direta lideram abertura</div>
+      <p>Nos dados mais recentes (maio/jun 2026), os assuntos de melhor abertura são perguntas diretas ou afirmações técnicas com dado: "CNPJ com letras: o que muda na emissão de notas" (23,72%), "Como o Split Payment muda o timing do recolhimento" (31,02%), "Pra quem usa Protheus, Datasul ou RM" (47,37%). O padrão se repete nas campanhas anteriores (TOTVS: 29,30%). Para e-mails de Panorama, o assunto deve trazer o dado ou a pergunta logo de cara.</p>
+    </div>
+    <div class="insight good">
+      <div class="insight-label">✓ Pré-header complementar ao assunto dobra o impacto</div>
+      <p>Nas campanhas de jun/2026, os e-mails com pré-header que contrasta ou complementa o assunto com dado ou pergunta adicional (ex: assunto "CNPJ com letras a partir de junho" + pré-header "Seus sistemas estão preparados para essa mudança?") atingiram 24,33% de abertura. Pré-headers genéricos como "Confira as novidades" perdem a oportunidade de qualificar o clique. Para esta campanha, cada e-mail terá pré-header obrigatório e complementar.</p>
+    </div>
+  </div>
+  <div class="insight-row">
+    <div class="insight good">
+      <div class="insight-label">✓ InApp Chat supera InApp Post em engajamento (3x)</div>
+      <p>Na campanha TOTVS (mar./2026), o InApp Chat registrou abertura de 68,92% e taxa de resposta de 1,42%, contra 24,70% e 0,85% do InApp Post. Para conteúdo educativo como o Panorama, o Chat é o formato certo para os momentos de maior intenção: dia do e-mail e semana de maior carga temática.</p>
+    </div>
+    <div class="insight good">
+      <div class="insight-label">✓ Assuntos em caixa baixa com tom técnico-coloquial performam bem</div>
+      <p>Nas campanhas TOTVS e Qive Explica (abr–jun 2026), assuntos sem maiúsculas no início e com tom coloquial-técnico tiveram abertura acima de 35–40%: "a Receita pergunta se está certo" (43,48%), "o ponto cego do compliance no TOTVS" (38,98%), "começa hoje: Qive Explica TOTVS" (36,82%). Tom de conversa entre profissionais, não de newsletter corporativa.</p>
+    </div>
+  </div>
+  <div class="insight-row">
+    <div class="insight bad">
+      <div class="insight-label">✗ Emojis no assunto reduzem abertura em base técnica B2B</div>
+      <p>Os e-mails com emoji no assunto (🎙️ É hoje às 10h, 🎁 Antes que 2026 chegue) ficaram sistematicamente abaixo dos variantes sem emoji na mesma campanha: 15,85% vs 18,91% no e-mail de dia do evento (jun/2026). Para base de logística com perfil técnico-financeiro, o assunto limpo e direto é a escolha mais segura.</p>
+    </div>
+    <div class="insight bad">
+      <div class="insight-label">✗ Pré-headers vagos desperdiçam o segundo argumento de abertura</div>
+      <p>Pré-headers do tipo "Confira as principais novidades para redefinir a sua rotina" (News de Produto, mai/2026) ou "Garanta agora a sua participação!" (Webinar RT) não acrescentam dado, contexto ou pergunta. Funcionam como preenchimento. Nas campanhas recentes, os pré-headers que trazem complemento real ao assunto têm taxa de abertura consistentemente superior. Nenhum e-mail desta campanha sai sem pré-header qualificado.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CALENDÁRIO -->
+<div class="section">
+  <div class="section-label"><div class="dot"></div><h2>Calendário de Disparos</h2></div>
+  <h3>Julho 2026 — visão semanal</h3>
+  <p>Nenhum disparo em finais de semana (04/05, 11/12, 18/19, 25/26 de Julho). <strong>09/07 (Quinta-feira)</strong> = Revolução Constitucionalista (feriado estadual em SP) — sem e-mail neste dia, disparo de InApp mantido por ser ativação interna de plataforma.</p>
+
+  <div style="margin-top: 24px;">
+
+    <!-- SEMANA 1 -->
+    <div class="week-header">
+      <span class="week-num">Semana 1</span>
+      <span class="week-line"></span>
+      <span class="week-theme">Abertura — O mapa do frete brasileiro</span>
+    </div>
+    <div class="calendar-grid">
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Terça</div>
+        <div class="cal-date">Dia 1</div>
+        <span class="cal-tag tag-email">E-mail 1</span>
+        <span class="cal-tag tag-inapp">InApp Chat 1</span>
+      </div>
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Quarta</div>
+        <div class="cal-date">Dia 2</div>
+        <span class="cal-tag tag-inapp">InApp Banner 1</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Quinta</div>
+        <div class="cal-date">Dia 3</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day inactive">
+        <div class="cal-weekday">Sexta</div>
+        <div class="cal-date">Dia 4</div>
+        <span class="cal-tag tag-off">—</span>
+      </div>
+      <div class="cal-day inactive">
+        <div class="cal-weekday">Fim de semana</div>
+        <div class="cal-date">Dias 5–6</div>
+        <span class="cal-tag tag-off">—</span>
+      </div>
+    </div>
+
+    <!-- SEMANA 2 -->
+    <div class="week-header">
+      <span class="week-num">Semana 2</span>
+      <span class="week-line"></span>
+      <span class="week-theme">Aprofundamento — Modais, rotas e tributação</span>
+    </div>
+    <div class="calendar-grid">
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Segunda</div>
+        <div class="cal-date">Dia 7</div>
+        <span class="cal-tag tag-email">E-mail 2</span>
+      </div>
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Terça</div>
+        <div class="cal-date">Dia 8</div>
+        <span class="cal-tag tag-inapp">InApp Post 1</span>
+      </div>
+      <div class="cal-day inactive">
+        <div class="cal-weekday">Quarta</div>
+        <div class="cal-date">Dia 9</div>
+        <span class="cal-tag tag-off">Verificar feriados</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Quinta</div>
+        <div class="cal-date">Dia 10</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day inactive">
+        <div class="cal-weekday">Sexta</div>
+        <div class="cal-date">Dia 11</div>
+        <span class="cal-tag tag-off">—</span>
+      </div>
+    </div>
+
+    <!-- SEMANA 3 -->
+    <div class="week-header">
+      <span class="week-num">Semana 3</span>
+      <span class="week-line"></span>
+      <span class="week-theme">Conexão — Prazos de pagamento e o custo do frete</span>
+    </div>
+    <div class="calendar-grid">
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Segunda</div>
+        <div class="cal-date">Dia 14</div>
+        <span class="cal-tag tag-email">E-mail 3</span>
+        <span class="cal-tag tag-inapp">InApp Chat 2</span>
+      </div>
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Terça</div>
+        <div class="cal-date">Dia 15</div>
+        <span class="cal-tag tag-inapp">InApp Banner 2</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Quarta</div>
+        <div class="cal-date">Dia 16</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Quinta</div>
+        <div class="cal-date">Dia 17</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day inactive">
+        <div class="cal-weekday">Sexta</div>
+        <div class="cal-date">Dia 18</div>
+        <span class="cal-tag tag-off">—</span>
+      </div>
+    </div>
+
+    <!-- SEMANA 4 -->
+    <div class="week-header">
+      <span class="week-num">Semana 4</span>
+      <span class="week-line"></span>
+      <span class="week-theme">Encerramento — O estudo completo está aqui</span>
+    </div>
+    <div class="calendar-grid">
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Segunda</div>
+        <div class="cal-date">Dia 21</div>
+        <span class="cal-tag tag-email">E-mail 4</span>
+      </div>
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Terça</div>
+        <div class="cal-date">Dia 22</div>
+        <span class="cal-tag tag-inapp">InApp Post 2</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Quarta</div>
+        <div class="cal-date">Dia 23</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Quinta</div>
+        <div class="cal-date">Dia 24</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day inactive">
+        <div class="cal-weekday">Sexta</div>
+        <div class="cal-date">Dia 25</div>
+        <span class="cal-tag tag-off">—</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- COPIES E CRIATIVOS -->
+<div class="section">
+  <div class="section-label"><div class="dot"></div><h2>Copies e Criativos por Disparo</h2></div>
+  <h3>Semana 1 — O mapa do frete brasileiro</h3>
+
+  <!-- E-MAIL 1 -->
+  <div class="week-header" style="margin-top:8px;">
+    <span class="week-num" style="background:var(--blue-light);color:var(--blue);">E-mail 1 · Semana 1 · Terça</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Abertura · Dado macro impactante sobre logística no Brasil</span>
+  </div>
+
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">E-mail 1 de 4</div>
+        <div class="disparo-date">Semana 1 · Terça-feira · Dia 1</div>
+      </div>
+      <span class="disparo-canal canal-email">E-mail</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-title">Objetivo: Apresentar o Panorama Logístico como fonte de inteligência e gerar curiosidade pelo estudo completo</div>
+      <div class="disparo-sub">Tipo: E-mail de lançamento de material rico · Template de marketing · Tom consultivo e técnico</div>
+
+      <div class="copy-label">Opção A — abertura pelos grandes números com contexto metodológico</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="email1a">
+          <div class="copy-subject">📌 Assunto: o que 194 milhões de CTes revelam sobre o frete brasileiro</div>
+          <div class="copy-subject">📩 Linha prévia: O Panorama Logístico da Qive está disponível. Dados reais de 2024 e 2025.</div>
+          <hr class="subtle">
+          <div class="copy-body">Olá, [Nome].
+
+A Qive analisou 194,2 milhões de CTes autorizados entre 2024 e 2025. Documentos de origem oficial da Sefaz, emitidos por transportadoras com CNPJ ativo, com exclusão de cancelados, denegados e subcontratações sem destaque de impostos, para evitar dupla contagem.
+
+O resultado é o Panorama Logístico do Brasil: um estudo que traduz essa base em inteligência sobre como a carga circula, a que custo e em quanto tempo.
+
+Alguns números que o estudo dimensiona:
+
+R$ 211 bilhões em frete pago no período. 34,2 trilhões de kg transportados. R$ 14,2 bilhões em ICMS recolhido. E um ticket médio de R$ 3 mil por CTe que, sozinho, já esconde histórias muito diferentes entre um caminhão de soja no Mato Grosso e uma entrega fracionada em São Paulo.
+
+97% das cargas do país se movem por modal rodoviário em volume de CTes, mas os 3% restantes (aquaviário, ferroviário, dutoviário) concentram tickets médios até 50 vezes maiores.
+
+São Paulo origina ~57% do volume nacional de CTes. A rota SP para SP, sozinha, representa 29% de todas as operações do país.
+
+Esse é o mapa físico do frete brasileiro. A Qive preparou um capítulo específico sobre o cenário logístico para quem quer entender o mercado com mais profundidade.
+
+[CTA] Acessar o Panorama de Mercado
+https://qive.com.br/panorama-de-mercado
+
+Até logo,
+Time Qive 🧡</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('email1a', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="copy-label">Opção B — abertura pela pergunta com dado geográfico e ângulo setorial</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="email1b">
+          <div class="copy-subject">📌 Assunto: você sabe de onde saem 57% das cargas do Brasil?</div>
+          <div class="copy-subject">📩 Linha prévia: A Qive analisou 194 milhões de CTes para responder essa e outras perguntas do setor.</div>
+          <hr class="subtle">
+          <div class="copy-body">Olá, [Nome].
+
+A rota SP para SP representa 29% de todo o volume de CTes do Brasil. São Paulo origina ~57% das cargas nacionais e ~34% do valor total de frete. O modal rodoviário concentra 97% do volume de CTes, mas apenas ~87% do montante pago em frete.
+
+O Brasil move carga sobre rodas, a partir de um único polo. Essa é a primeira grande conclusão do Panorama do Contas a Pagar da Qive, no capítulo "Como as empresas transportam mercadorias no Brasil", um estudo baseado em 194,2 milhões de CTes autorizados de 2024 e 2025, com enriquecimento setorial de dupla camada por CNAE de remetente e destinatário.
+
+Mas o estudo vai além do volume. Ele mapeia:
+
+A diferença entre quem lidera em volume e quem lidera em valor: em volume, o Varejo domina as interações; em montante pago em frete, a Indústria lidera. Os maiores fluxos financeiros do país passam pelas relações da Indústria como remetente.
+
+Os corredores de alto valor que o volume esconde: as rotas MS para MG (R$ 20,05 mil por CTe), TO para BA (R$ 17,76 mil) e MT para PR (R$ 16 mil) são os corredores do agronegócio, cargas que movem poucos caminhões, mas muito dinheiro.
+
+A exceção que confirma a regra: no Amazonas, ~62% do volume de CTes circula por via aquaviária. A geografia define o modal, e o Panorama mostra isso com dados.
+
+[CTA] Ver o Panorama Logístico completo
+https://qive.com.br/panorama-de-mercado
+
+Abraço,
+Time Qive 🧡</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('email1b', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="briefing">
+        <div class="briefing-label">Briefing de criativo — Header do E-mail 1</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 × 400 px</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 200 KB</td></tr>
+          <tr><td>Descrição</td><td>Fundo grafite escuro (#1A1A1A). Lado esquerdo: título "Panorama Logístico Brasil 2024–2025" em tipografia pesada branca, com subtítulo menor "194,2 milhões de CTes analisados". Lado direito: mapa estilizado do Brasil com linhas de rota em laranja partindo de São Paulo, estilo minimalista vetorial. Logo da Qive no canto inferior direito.</td></tr>
+          <tr><td>Estilo</td><td>Institucional e técnico. Fundo escuro com destaque em laranja (#E95A1C). Sem stock photos.</td></tr>
+        </table>
+      </div>
+      <div class="briefing" style="margin-top:10px;">
+        <div class="briefing-label">Briefing de criativo — Bloco de corpo E-mail 1</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 px de largura, altura variável</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 300 KB</td></tr>
+          <tr><td>Descrição</td><td>Fundo claro (#F5F4F0). Três cards lado a lado destacando os dados principais: (1) "97% rodoviário" com ícone de caminhão, (2) "R$ 211 bi em frete" com ícone de documento/CTe, (3) "R$ 14,2 bi em ICMS" com ícone de porcentagem. Cada card tem o número em laranja grande e legenda em cinza. Rodapé com CTA laranja "Acessar o Panorama".</td></tr>
+          <tr><td>Estilo</td><td>Clean, fundo claro, dados em destaque. Usar paleta Qive (laranja + grafite + branco).</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- INAPP CHAT 1 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--amber-light);color:var(--amber);">InApp Chat 1 · Semana 1 · Terça</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Ativação dentro da plataforma — convite para o Panorama</span>
+  </div>
+
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">InApp Chat 1 de 2</div>
+        <div class="disparo-date">Semana 1 · Terça-feira · Disparo via plataforma</div>
+      </div>
+      <span class="disparo-canal canal-inapp">InApp Chat</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Mensagem conversacional, curta e direta. Complementa o e-mail do dia sem repetir o mesmo argumento. Tom de parceria, não de venda.</div>
+
+      <div class="copy-label">Opção A — dado de impacto como gancho</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="chat1a">
+          <div class="copy-body">Oi, [Nome]! A Qive analisou 194 milhões de CTes do Brasil e montou um estudo sobre o setor logístico. Tem dados sobre rotas, modais e tributação que valem a leitura. Posso te mandar o link? 🧡
+
+[CTA]: Sim, quero ver
+https://qive.com.br/panorama-de-mercado</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('chat1a', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="copy-label">Opção B — abordagem pela relevância setorial</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="chat1b">
+          <div class="copy-body">Oi, [Nome]. Publicamos o estudo "Como as empresas transportam mercadorias no Brasil", do Panorama do Contas a Pagar da Qive, com dados reais de CTes de 2024 e 2025. Rotas, volumes, ICMS e prazos de pagamento do setor. Vale conferir.
+
+[CTA]: Acessar o estudo
+https://qive.com.br/panorama-de-mercado</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('chat1b', this)">📋 Copiar copy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INAPP BANNER 1 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--amber-light);color:var(--amber);">InApp Banner 1 · Semana 1 · Quarta</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Banner visual de reforço — visibilidade passiva</span>
+  </div>
+
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">InApp Banner 1 de 2</div>
+        <div class="disparo-date">Semana 1 · Quarta-feira · Dia 2</div>
+      </div>
+      <span class="disparo-canal canal-inapp">InApp Banner</span>
+    </div>
+    <div class="disparo-body">
+
+      <div class="copy-label">Opção A — dado de volume como gancho</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="banner1a">
+          <div class="copy-body">A Qive analisou 194 milhões de CTes para mapear como o frete circula no Brasil.
+
+[CTA]: Ver o Panorama Logístico
+https://qive.com.br/panorama-de-mercado</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('banner1a', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="copy-label">Opção B — dado tributário como gancho</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="banner1b">
+          <div class="copy-body">R$ 14,2 bilhões em ICMS no frete brasileiro: o Panorama do Contas a Pagar da Qive tem os dados.
+
+[CTA]: Acessar o estudo
+https://qive.com.br/panorama-de-mercado</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('banner1b', this)">📋 Copiar copy</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEMANA 2 -->
+  <h3 style="margin-top: 40px;">Semana 2 — Modais, rotas e tributação</h3>
+
+  <!-- E-MAIL 2 -->
+  <div class="week-header" style="margin-top:8px;">
+    <span class="week-num" style="background:var(--blue-light);color:var(--blue);">E-mail 2 · Semana 2 · Segunda</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Aprofundamento · Tributação e assimetria do ICMS no frete</span>
+  </div>
+
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">E-mail 2 de 4</div>
+        <div class="disparo-date">Semana 2 · Segunda-feira · Dia 7</div>
+      </div>
+      <span class="disparo-canal canal-email">E-mail</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Foco em tributação logística — dado técnico que poucos conhecem. Tom didático, não comercial. Diferente do E-mail 1: aqui o dado é tributário, não volumétrico.</div>
+
+      <div class="copy-label">Opção A — assimetria tributária como insight com contexto de regime</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="email2a">
+          <div class="copy-subject">📌 Assunto: o frete estadual é mais tributado do que o interestadual</div>
+          <div class="copy-subject">📩 Linha prévia: 15,74% vs 11,4% de alíquota efetiva mediana em regime normal. O Panorama Qive explica essa diferença.</div>
+          <hr class="subtle">
+          <div class="copy-body">Olá, [Nome].
+
+Um dos achados mais interessantes do Panorama do Contas a Pagar da Qive, no capítulo "Como as empresas transportam mercadorias no Brasil", vai na contramão do que muitas empresas assumem: em regime normal, o frete estadual tem alíquota efetiva mediana de ICMS de 15,74%, enquanto o frete interestadual fica em 11,4%.
+
+Transportar dentro do mesmo estado pode custar mais em tributo do que cruzar fronteiras.
+
+Essa assimetria aparece com clareza quando o estudo isola o Regime Normal, que representa 64,5% de todos os registros tributários analisados, para evitar que os benefícios do Simples Nacional (7,2% da base) diluam a percepção da carga tributária real.
+
+O montante total recolhido no período foi de R$ 14,2 bilhões em ICMS, com alíquota efetiva mediana geral de 11,49% sobre todos os regimes. O pico mensal foi agosto de 2025, com R$ 927,3 milhões recolhidos em um único mês.
+
+Para o setor logístico, esses dados têm impacto direto na análise de custo por rota: uma operação que parece vantajosa por distância pode ser mais cara por tributação. O estudo tem o detalhamento por estado, rota e setor para quem quer aprofundar essa análise.
+
+[CTA] Acessar o Panorama de Mercado
+https://qive.com.br/panorama-de-mercado
+
+Até logo,
+Time Qive 🧡</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('email2a', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="copy-label">Opção B — corredores de alto valor com separação correta entre volume e valor setorial</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="email2b">
+          <div class="copy-subject">📌 Assunto: a rota MS para MG tem ticket médio de R$ 20 mil por CTe. O que isso diz sobre o agro?</div>
+          <div class="copy-subject">📩 Linha prévia: Os corredores logísticos de maior valor do Brasil, com dados reais do Panorama da Qive.</div>
+          <hr class="subtle">
+          <div class="copy-body">Olá, [Nome].
+
+O ticket médio nacional por CTe é de R$ 3 mil. Mas existem rotas onde esse número é completamente diferente.
+
+MS para MG: R$ 20,05 mil por CTe. TO para BA: R$ 17,76 mil. MT para PR: R$ 16 mil. São os corredores do agronegócio: cargas de alto valor unitário que atravessam o país e revelam uma economia logística muito diferente do que o volume sugere.
+
+O Panorama do Contas a Pagar da Qive, no capítulo "Como as empresas transportam mercadorias no Brasil", separa com precisão essas duas dimensões. Em volume de CTes, quem lidera são as interações do Varejo: é o setor com maior frequência de operações no país. Em montante pago em frete, quem domina é a Indústria: as relações com a Indústria como remetente concentram a maior parte do valor financeiro movimentado.
+
+Dois mercados logísticos dentro do mesmo número: um de alta frequência e baixo ticket, outro de menor volume e altíssimo valor. O estudo completo tem o detalhamento por setor, rota e estado.
+
+[CTA] Ver os dados completos
+https://qive.com.br/panorama-de-mercado
+
+Abraço,
+Time Qive 🧡</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('email2b', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="briefing">
+        <div class="briefing-label">Briefing de criativo — Header do E-mail 2</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 × 400 px</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 200 KB</td></tr>
+          <tr><td>Descrição</td><td>Fundo laranja claro (#FFF0E8). Lado esquerdo: título "ICMS no frete: o que os dados revelam" em grafite, subtítulo "Alíquotas, regimes e tributação real — Panorama Qive 2024–2025". Lado direito: dois blocos comparativos lado a lado — "Frete Estadual 15,74%" vs "Frete Interestadual 11,4%" — em cards com bordas contrastantes. Logo Qive inferior direito.</td></tr>
+          <tr><td>Estilo</td><td>Fundo claro com elementos de comparação. Tom informativo, não alarmante.</td></tr>
+        </table>
+      </div>
+      <div class="briefing" style="margin-top:10px;">
+        <div class="briefing-label">Briefing de criativo — Bloco de corpo E-mail 2</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 px de largura, altura variável</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 300 KB</td></tr>
+          <tr><td>Descrição</td><td>Mapa estilizado do Brasil com as 3 rotas de maior ticket médio destacadas em laranja: MS→MG, TO→BA, MT→PR. Cada rota com o valor do ticket médio em destaque. Fundo claro. CTA ao final "Acessar o Panorama" em botão laranja.</td></tr>
+          <tr><td>Estilo</td><td>Cartográfico e limpo. Usar apenas as cores da paleta Qive. Sem sobrecarregar o mapa com dados.</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- INAPP POST 1 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--amber-light);color:var(--amber);">InApp Post 1 · Semana 2 · Terça</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Reforço visual passivo — destaque ao dado tributário</span>
+  </div>
+
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">InApp Post 1 de 2</div>
+        <div class="disparo-date">Semana 2 · Terça-feira · Dia 8</div>
+      </div>
+      <span class="disparo-canal canal-inapp">InApp Post</span>
+    </div>
+    <div class="disparo-body">
+
+      <div class="copy-label">Opção A — dado tributário como destaque</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="post1a">
+          <div class="copy-body">R$ 14,2 bilhões em ICMS coletados no frete brasileiro entre 2024 e 2025.
+
+O estudo "Como as empresas transportam mercadorias no Brasil", do Panorama do Contas a Pagar da Qive, analisa como a tributação impacta as operações de transporte no Brasil, com dados reais de CTes autorizados.
+
+[CTA]: Ver o capítulo de tributação
+https://qive.com.br/panorama-de-mercado</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('post1a', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="copy-label">Opção B — diferenciação de modais</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="post1b">
+          <div class="copy-body">97% das cargas andam de caminhão. Mas os outros 3% movimentam os maiores valores por CTe.
+
+Aquaviário: R$ 117,06 mil por CTe. Ferroviário: R$ 38,38 mil. Rodoviário: R$ 3,37 mil.
+
+O estudo "Como as empresas transportam mercadorias no Brasil" mostra por que modal e valor não caminham juntos no Brasil.
+
+[CTA]: Acessar o estudo
+https://qive.com.br/panorama-de-mercado</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('post1b', this)">📋 Copiar copy</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEMANA 3 -->
+  <h3 style="margin-top: 40px;">Semana 3 — Prazos de pagamento e o custo do frete</h3>
+
+  <!-- E-MAIL 3 -->
+  <div class="week-header" style="margin-top:8px;">
+    <span class="week-num" style="background:var(--blue-light);color:var(--blue);">E-mail 3 · Semana 3 · Segunda</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Conexão · Prazos de pagamento e saúde financeira da operação</span>
+  </div>
+
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">E-mail 3 de 4</div>
+        <div class="disparo-date">Semana 3 · Segunda-feira · Dia 14</div>
+      </div>
+      <span class="disparo-canal canal-email">E-mail</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Foco em prazos de pagamento de frete — dado que conecta logística ao financeiro. Narrativa diferente dos e-mails anteriores: aqui o ângulo é operacional/financeiro.</div>
+
+      <div class="copy-label">Opção A — prazos por modal com dado completo da tabela e conexão financeira</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="email3a">
+          <div class="copy-subject">📌 Assunto: o frete rodoviário tem o maior prazo de pagamento entre todos os modais</div>
+          <div class="copy-subject">📩 Linha prévia: 27 dias para o modal que move 97% das cargas. E o prazo da rota internacional chega a 28. Entenda o impacto.</div>
+          <hr class="subtle">
+          <div class="copy-body">Olá, [Nome].
+
+O modal rodoviário concentra 97% do volume de CTes do Brasil e tem o maior prazo médio de pagamento de frete entre todos os modais: 27 dias.
+
+Para efeito de comparação, o estudo "Como as empresas transportam mercadorias no Brasil", do Panorama do Contas a Pagar da Qive, mapeia o prazo médio de todos os modais (considerando apenas fretes a prazo, ponderados por valor):
+
+Aéreo: 7 dias. Aquaviário: 9 dias. Ferroviário: 12 dias. Dutoviário: 16 dias. Multimodal: 24 dias. Rodoviário: 27 dias.
+
+Quando o recorte é por categoria de rota, o prazo das operações internacionais chega a 28 dias, ligeiramente maior do que os 27 das interestaduais e os 24 das estaduais.
+
+Em todos os casos, o número médio de parcelas é 1. O prazo longo não vem do parcelamento, mas do ciclo de crédito comercial B2B embutido nas operações de frete.
+
+Para quem atua no setor logístico, esse dado tem implicação direta: o rodoviário, que domina a matriz do país, também é o modal com o maior gap entre a prestação do serviço e o recebimento. Entender esse ciclo financeiro é parte da gestão de risco de qualquer operação.
+
+[CTA] Acessar o capítulo de logística
+[PLACEHOLDER: https://qive.com.br/panorama-de-mercado/logistica]
+
+Até logo,
+Time Qive 🧡</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('email3a', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="copy-label">Opção B — sazonalidade com série histórica mensal e contexto de julho</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="email3b">
+          <div class="copy-subject">📌 Assunto: outubro foi o mês de maior volume de frete do Brasil em 2025. Julho é o começo dessa curva.</div>
+          <div class="copy-subject">📩 Linha prévia: 10 milhões de CTes em julho de 2025 vs 7,6 milhões em julho de 2024. O segundo semestre tem padrão.</div>
+          <hr class="subtle">
+          <div class="copy-body">Olá, [Nome].
+
+O estudo "Como as empresas transportam mercadorias no Brasil", do Panorama do Contas a Pagar da Qive, mapeou a evolução mensal do frete brasileiro entre 2024 e 2025, e o padrão é consistente: o segundo semestre concentra os picos, e 2025 superou 2024 em todos os meses do ano.
+
+Julho de 2025 registrou 10 milhões de CTes e R$ 11,16 bilhões em frete. Em julho de 2024, o mesmo mês tinha sido 7,6 milhões de CTes e R$ 8,17 bilhões. Uma diferença de 31% em volume e 37% em valor em apenas um ano.
+
+O pico foi outubro de 2025: 10,6 milhões de CTes e R$ 11,71 bilhões em frete. O menor mês do período foi janeiro de 2024, com 6,4 milhões de CTes e R$ 6,82 bilhões.
+
+Para quem opera no setor logístico, essa evolução tem implicação direta na gestão documental: mais volume significa mais CTes para capturar, organizar e cruzar. Julho, que começa essa curva de alta, é o momento certo para entender o comportamento histórico do mercado, e o Panorama tem essa série completa.
+
+[CTA] Ver a evolução mensal do frete
+[PLACEHOLDER: https://qive.com.br/panorama-de-mercado/logistica]
+
+Abraço,
+Time Qive 🧡</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('email3b', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="briefing">
+        <div class="briefing-label">Briefing de criativo — Header do E-mail 3</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 × 400 px</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 200 KB</td></tr>
+          <tr><td>Descrição</td><td>Fundo grafite escuro (#1A1A1A). Título central: "27 dias" em tipografia muito grande (Thin/Extralight), cor laranja, com subtítulo "prazo médio de pagamento do frete rodoviário" em branco menor. Abaixo: linha do tempo simplificada mostrando os prazos dos 5 modais lado a lado (Aéreo 7d, Aquaviário 9d, Ferroviário 12d, Multimodal 24d, Rodoviário 27d), em tons de laranja crescente. Logo Qive inferior direito.</td></tr>
+          <tr><td>Estilo</td><td>Minimalista. Fundo escuro com destaque em número grande. Sensação de dado importante.</td></tr>
+        </table>
+      </div>
+      <div class="briefing" style="margin-top:10px;">
+        <div class="briefing-label">Briefing de criativo — Bloco de corpo E-mail 3</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 px de largura, altura variável</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 300 KB</td></tr>
+          <tr><td>Descrição</td><td>Gráfico de linha estilizado mostrando a evolução mensal do volume de frete em 2024 vs 2025 (Jan a Out), com destaque no pico de Outubro/2025. Linha 2025 em laranja, linha 2024 em cinza. Fundo claro (#F5F4F0). Nota de rodapé: "Fonte: Panorama Logístico Qive 2024–2025 — base de CTes autorizados (Sefaz)".</td></tr>
+          <tr><td>Estilo</td><td>Gráfico limpo, editorial. Não sobrecarregar com labels — apenas os pontos de pico precisam de anotação.</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- INAPP CHAT 2 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--amber-light);color:var(--amber);">InApp Chat 2 · Semana 3 · Segunda</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Reativação — para quem ainda não acessou o Panorama</span>
+  </div>
+
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">InApp Chat 2 de 2</div>
+        <div class="disparo-date">Semana 3 · Segunda-feira · Dia 14</div>
+      </div>
+      <span class="disparo-canal canal-inapp">InApp Chat</span>
+    </div>
+    <div class="disparo-body">
+
+      <div class="copy-label">Opção A — foco em prazo de pagamento</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="chat2a">
+          <div class="copy-body">Oi, [Nome]! Uma curiosidade do estudo de logística da Qive: o modal rodoviário tem prazo médio de pagamento de 27 dias, o maior entre todos os modais. Tem impacto direto no fluxo de caixa de quem opera com frete. Posso te mandar o estudo completo? 🧡
+
+[CTA]: Sim, quero ver
+[PLACEHOLDER: https://qive.com.br/panorama-de-mercado/logistica]</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('chat2a', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="copy-label">Opção B — foco no pico do segundo semestre</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="chat2b">
+          <div class="copy-body">Oi, [Nome]. Julho marca o início da alta temporada do frete brasileiro. Outubro de 2025 bateu recorde com 10,6 milhões de CTes. O estudo de logística da Qive tem a série histórica completa. Faz sentido dar uma olhada?
+
+[CTA]: Acessar o estudo
+[PLACEHOLDER: https://qive.com.br/panorama-de-mercado/logistica]</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('chat2b', this)">📋 Copiar copy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INAPP BANNER 2 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--amber-light);color:var(--amber);">InApp Banner 2 · Semana 3 · Terça</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Reforço passivo — segundo semestre e sazonalidade</span>
+  </div>
+
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">InApp Banner 2 de 2</div>
+        <div class="disparo-date">Semana 3 · Terça-feira · Dia 15</div>
+      </div>
+      <span class="disparo-canal canal-inapp">InApp Banner</span>
+    </div>
+    <div class="disparo-body">
+
+      <div class="copy-label">Opção A — sazonalidade logística</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="banner2a">
+          <div class="copy-body">O segundo semestre concentra os picos de frete: veja os dados do estudo de logística do Panorama do Contas a Pagar da Qive.
+
+[CTA]: Acessar o estudo
+[PLACEHOLDER: https://qive.com.br/panorama-de-mercado/logistica]</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('banner2a', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="copy-label">Opção B — convite direto ao capítulo</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="banner2b">
+          <div class="copy-body">O capítulo de logística do Panorama de Mercado da Qive está disponível.
+
+[CTA]: Acessar o capítulo
+[PLACEHOLDER: https://qive.com.br/panorama-de-mercado/logistica]</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('banner2b', this)">📋 Copiar copy</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEMANA 4 -->
+  <h3 style="margin-top: 40px;">Semana 4 — Encerramento e convite final ao estudo completo</h3>
+
+  <!-- E-MAIL 4 -->
+  <div class="week-header" style="margin-top:8px;">
+    <span class="week-num" style="background:var(--blue-light);color:var(--blue);">E-mail 4 · Semana 4 · Segunda</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Encerramento · Convite ao estudo completo — síntese dos dados</span>
+  </div>
+
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">E-mail 4 de 4</div>
+        <div class="disparo-date">Semana 4 · Segunda-feira · Dia 21</div>
+      </div>
+      <span class="disparo-canal canal-email">E-mail</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Encerramento da campanha. Tom de síntese e convite. Diferente dos anteriores: aqui o argumento é "você viu os recortes, agora veja o estudo inteiro". Envio para toda a base, incluindo quem não clicou nos e-mails anteriores.</div>
+
+      <div class="copy-label">Opção A — síntese narrativa com dados de cada tema da campanha</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="email4a">
+          <div class="copy-subject">📌 Assunto: ao longo de julho, compartilhamos dados do frete brasileiro. Aqui está o estudo completo.</div>
+          <div class="copy-subject">📩 Linha prévia: 194,2 milhões de CTes, R$ 211 bilhões em frete e 34,2 trilhões de kg analisados. O Panorama do Contas a Pagar da Qive.</div>
+          <hr class="subtle">
+          <div class="copy-body">Olá, [Nome].
+
+Ao longo dessas semanas, trouxemos recortes do estudo "Como as empresas transportam mercadorias no Brasil", do Panorama do Contas a Pagar da Qive. Cada e-mail foi um ângulo diferente do mesmo estudo:
+
+O mapa físico: 97% das cargas andam de caminhão em volume de CTes, ~57% saem de São Paulo e a rota SP para SP representa 29% de todas as operações do país.
+
+A tributação: frete estadual com alíquota efetiva mediana de 15,74% contra 11,4% do interestadual em regime normal. R$ 14,2 bilhões em ICMS recolhidos no período.
+
+O ciclo financeiro: rodoviário com 27 dias de prazo médio de pagamento, o mais longo entre todos os modais. E 2025 superando 2024 em todos os meses, com julho de 2025 registrando 10 milhões de CTes e R$ 11,16 bilhões em frete.
+
+Esses são recortes de um estudo maior: 194,2 milhões de CTes autorizados, R$ 211 bilhões em frete e 34,2 trilhões de kg transportados. Dados de origem oficial (Sefaz), com exclusão de cancelados, denegados e subcontratações sem destaque de impostos, e enriquecimento setorial por CNAE de remetente e destinatário.
+
+O estudo completo tem rankings por estado, município e rota, análise modal por estado, evolução histórica mensal, tributação por setor e interações entre setores: quem compra de quem, quanto custa mover essa carga e em quanto tempo o pagamento acontece.
+
+É a inteligência de mercado que a Qive coloca à disposição do setor logístico.
+
+[CTA] Acessar o Panorama do Contas a Pagar
+https://qive.com.br/panorama-de-mercado
+
+Até logo,
+Time Qive 🧡</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('email4a', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="copy-label">Opção B — posicionamento metodológico da Qive como fonte de dados</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="email4b">
+          <div class="copy-subject">📌 Assunto: a Qive analisou 194 milhões de CTes. O que isso significa para o setor logístico?</div>
+          <div class="copy-subject">📩 Linha prévia: Metodologia, origem Sefaz e enriquecimento setorial por CNAE. O estudo de logística da Qive está disponível.</div>
+          <hr class="subtle">
+          <div class="copy-body">Olá, [Nome].
+
+A Qive trabalha com documentos fiscais há anos. CTes, NFes, NFSes: documentos que, quando organizados com rigor e metodologia clara, revelam muito mais do que uma operação isolada.
+
+O estudo "Como as empresas transportam mercadorias no Brasil", do Panorama do Contas a Pagar da Qive, é resultado disso: 194,2 milhões de CTes autorizados, com origem oficial da Sefaz. O escopo inclui apenas CTes de transportadoras com CNPJ ativo, excluindo cancelados, denegados e subcontratações sem destaque de impostos para evitar dupla contagem. O enriquecimento setorial usa dupla camada de CNAE, remetente e destinatário, para mapear quem compra de quem.
+
+O que esse nível de rigor permite ver:
+
+R$ 211 bilhões em frete e 34,2 trilhões de kg transportados em dois anos. A concentração de ~57% do volume em São Paulo. A assimetria tributária entre rotas estaduais (15,74%) e interestaduais (11,4%) em regime normal. Os 27 dias de prazo médio do rodoviário, contra 7 do aéreo. E a evolução mensal que mostra 2025 superando 2024 em todos os meses.
+
+É a inteligência de mercado que a Qive coloca à disposição do setor.
+
+[CTA] Acessar o estudo completo
+https://qive.com.br/panorama-de-mercado
+
+Abraço,
+Time Qive 🧡</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('email4b', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="briefing">
+        <div class="briefing-label">Briefing de criativo — Header do E-mail 4</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 × 400 px</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 200 KB</td></tr>
+          <tr><td>Descrição</td><td>Fundo grafite (#1A1A1A). Composição em grade com 4 blocos menores (referenciando os 4 e-mails da campanha), cada um com um dado em destaque: "194M CTes", "97% Rodoviário", "R$14,2bi ICMS", "27 dias prazo". Todos em laranja/branco sobre grafite. Título acima: "Panorama Logístico Brasil 2024–2025 — estudo completo disponível". Logo Qive inferior.</td></tr>
+          <tr><td>Estilo</td><td>Grid de dados. Sensação de síntese e completude. Escuro com laranja.</td></tr>
+        </table>
+      </div>
+      <div class="briefing" style="margin-top:10px;">
+        <div class="briefing-label">Briefing de criativo — Bloco de corpo E-mail 4</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 px de largura, altura variável</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 300 KB</td></tr>
+          <tr><td>Descrição</td><td>Fundo claro (#F5F4F0). Card central de destaque com a capa do Panorama (ou imagem representativa do estudo), título "Panorama Logístico 2024–2025" e subtítulo "Rotas · Modais · ICMS · Prazos". Abaixo do card: lista de 4 bullets com os temas do estudo em fonte pequena. Botão CTA laranja "Acessar o estudo completo". Logo Qive inferior.</td></tr>
+          <tr><td>Estilo</td><td>Clean, centrado no material. Sensação de entrega de conteúdo, não de venda.</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- INAPP POST 2 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--amber-light);color:var(--amber);">InApp Post 2 · Semana 4 · Terça</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Encerramento visual — último toque para quem ainda não acessou</span>
+  </div>
+
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">InApp Post 2 de 2</div>
+        <div class="disparo-date">Semana 4 · Terça-feira · Dia 22</div>
+      </div>
+      <span class="disparo-canal canal-inapp">InApp Post</span>
+    </div>
+    <div class="disparo-body">
+
+      <div class="copy-label">Opção A — convite direto ao estudo completo</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="post2a">
+          <div class="copy-body">O estudo "Como as empresas transportam mercadorias no Brasil", do Panorama do Contas a Pagar da Qive, está disponível.
+
+194,2 milhões de CTes analisados. Rotas, modais, tributação e prazos do setor logístico brasileiro, com dados reais de 2024 e 2025.
+
+[CTA]: Acessar o estudo
+https://qive.com.br/panorama-de-mercado</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('post2a', this)">📋 Copiar copy</button>
+      </div>
+
+      <div class="copy-label">Opção B — posicionamento pela metodologia</div>
+      <div class="copy-wrap">
+        <div class="copy-box" id="post2b">
+          <div class="copy-body">194,2 milhões de CTes autorizados, origem oficial Sefaz, período 2024 e 2025.
+
+O Panorama do Contas a Pagar da Qive transforma documentos fiscais reais em inteligência de mercado sobre como a carga circula no Brasil.
+
+[CTA]: Ver o estudo
+https://qive.com.br/panorama-de-mercado</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('post2b', this)">📋 Copiar copy</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROJEÇÃO DE RESULTADOS -->
+<div class="section">
+  <div class="section-label"><div class="dot"></div><h2>Projeção de Resultados</h2></div>
+  <h3>Estimativa baseada no histórico de campanhas</h3>
+  <p>Projeção conservadora baseada nas taxas médias das campanhas de nutrição setorial (Varejo, Pós-Panorama e TOTVS), as mais similares em estrutura (e-mail + InApp) e objetivo (engajamento/retenção educativa). Base: 153 contas / 306 contatos.</p>
+  <p><strong>Nota:</strong> esta campanha é 100% educativa, sem CTA comercial. O KPI principal não é conversão em venda, mas engajamento, cliques e acessos ao Panorama via formulário. NB não é objetivo desta campanha.</p>
+
+  <div class="proj-grid" style="margin: 24px 0;">
+    <div class="proj-card">
+      <div class="proj-num">35–50%</div>
+      <div class="proj-label">Taxa de abertura esperada (e-mails)</div>
+      <div class="proj-desc">Ref. Nutrição Varejo: 38–65%. Base segmentada de 306 contatos tende a taxas superiores à média.</div>
+    </div>
+    <div class="proj-card featured">
+      <div class="proj-num">25–55</div>
+      <div class="proj-label">Cliques totais estimados (e-mails)</div>
+      <div class="proj-desc">Tx. clique sobre abertos: 6–10% por e-mail, ref. campanhas de nutrição CRM. Acumulado nos 4 disparos.</div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-num">5–16</div>
+      <div class="proj-label">Formulários preenchidos (acessos ao Panorama)</div>
+      <div class="proj-desc">Tx. conversão clique para formulário: 20–30%. Referência de mercado B2B para material rico — sem dado histórico próprio.</div>
+    </div>
+  </div>
+
+  <!-- TABELA E-MAILS -->
+  <p style="font-size: 12px; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; margin-top: 24px;">E-mails — projeção por disparo</p>
+  <div style="overflow-x:auto;">
+  <table class="kpi-table">
+    <thead>
+      <tr>
+        <th>Disparo</th>
+        <th>Base</th>
+        <th>Tx. abertura est.</th>
+        <th>Aberturas est.</th>
+        <th>Tx. clique / abertos</th>
+        <th>Cliques est.</th>
+        <th>Referência</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>E-mail 1 (01/07)</td>
+        <td>306</td>
+        <td>35–45%</td>
+        <td>~107–138</td>
+        <td class="highlight-cell">7–10%</td>
+        <td>~8–14</td>
+        <td>Webinar RT 1A: 1,96% clique/entregues ≈ 9–10% clique/abertos</td>
+      </tr>
+      <tr>
+        <td>E-mail 2 (07/07)</td>
+        <td>306</td>
+        <td>32–42%</td>
+        <td>~98–128</td>
+        <td class="highlight-cell">6–9%</td>
+        <td>~6–12</td>
+        <td>Webinar RT 2B: 0,67% clique/entregues ≈ 6–7% clique/abertos</td>
+      </tr>
+      <tr>
+        <td>E-mail 3 (14/07)</td>
+        <td>306</td>
+        <td>30–40%</td>
+        <td>~92–122</td>
+        <td class="highlight-cell">6–9%</td>
+        <td>~6–11</td>
+        <td>Mudança de Plano 2B: alinhado a padrão de e-mail 3 de nutrição</td>
+      </tr>
+      <tr>
+        <td>E-mail 4 (21/07)</td>
+        <td>306</td>
+        <td>28–38%</td>
+        <td>~86–116</td>
+        <td class="highlight-cell">6–8%</td>
+        <td>~5–9</td>
+        <td>Tendência de queda leve no 4º e-mail da sequência</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- TABELA INAPP -->
+  <p style="font-size: 12px; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; margin-top: 24px;">InApps — projeção por disparo</p>
+  <div style="overflow-x:auto;">
+  <table class="kpi-table">
+    <thead>
+      <tr>
+        <th>Disparo</th>
+        <th>Base</th>
+        <th>Tx. abertura est.</th>
+        <th>Visualizações est.</th>
+        <th>Tx. clique / resposta</th>
+        <th>Cliques / respostas est.</th>
+        <th>Referência</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>InApp Chat 1 (01/07)</td>
+        <td>~250</td>
+        <td class="highlight-cell">55–70%</td>
+        <td>~138–175</td>
+        <td class="highlight-cell">Resp. ~1–1,4%</td>
+        <td>~2–3 respostas</td>
+        <td>TOTVS Chat: 68,92% ab., 1,42% resp.</td>
+      </tr>
+      <tr>
+        <td>InApp Banner 1 (02/07)</td>
+        <td>~250</td>
+        <td>20–25%</td>
+        <td>~50–63</td>
+        <td>Clique ~1–2%</td>
+        <td>~1–2 cliques</td>
+        <td>Referência de banner passivo; clique baixo é esperado</td>
+      </tr>
+      <tr>
+        <td>InApp Post 1 (08/07)</td>
+        <td>~250</td>
+        <td>20–25%</td>
+        <td>~50–63</td>
+        <td>Clique ~1–2%</td>
+        <td>~1–2 cliques</td>
+        <td>TOTVS Post: 24,70% abertura</td>
+      </tr>
+      <tr>
+        <td>InApp Chat 2 (14/07)</td>
+        <td>~200</td>
+        <td class="highlight-cell">55–65%</td>
+        <td>~110–130</td>
+        <td class="highlight-cell">Resp. ~1–1,4%</td>
+        <td>~2 respostas</td>
+        <td>Pós-Panorama Chat: 53,78%</td>
+      </tr>
+      <tr>
+        <td>InApp Banner 2 (15/07)</td>
+        <td>~200</td>
+        <td>20–25%</td>
+        <td>~40–50</td>
+        <td>Clique ~1–2%</td>
+        <td>~1 clique</td>
+        <td>Consistente com histórico de banner</td>
+      </tr>
+      <tr>
+        <td>InApp Post 2 (22/07)</td>
+        <td>~200</td>
+        <td>18–22%</td>
+        <td>~36–44</td>
+        <td>Clique ~1–2%</td>
+        <td>~1 clique</td>
+        <td>Queda leve esperada no encerramento</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- FUNIL DE CONVERSÃO -->
+  <p style="font-size: 12px; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; margin-top: 24px;">Funil de conversão — do clique ao formulário preenchido</p>
+  <div style="overflow-x:auto;">
+  <table class="kpi-table">
+    <thead>
+      <tr>
+        <th>Etapa</th>
+        <th>Origem</th>
+        <th>Volume estimado</th>
+        <th>Taxa aplicada</th>
+        <th>Resultado</th>
+        <th>Base da taxa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cliques totais (e-mails)</td>
+        <td>4 e-mails · base 306</td>
+        <td>Aberturas acum. ~383–504</td>
+        <td class="highlight-cell">6–10% clique/abertos</td>
+        <td><strong>~25–50 cliques</strong></td>
+        <td>Campanhas Webinar RT e Nutrição CRM</td>
+      </tr>
+      <tr>
+        <td>Cliques totais (InApps)</td>
+        <td>Banners + Posts + Chats</td>
+        <td>Visualizações acum. ~424–525</td>
+        <td>1–2% clique (banners/posts); 1–1,4% resp. (chats)</td>
+        <td><strong>~6–14 cliques/respostas</strong></td>
+        <td>Histórico TOTVS e Pós-Panorama</td>
+      </tr>
+      <tr>
+        <td>Acessos à página do Panorama</td>
+        <td>Soma e-mails + InApps</td>
+        <td>~31–64 cliques totais</td>
+        <td>~85% chegam à página (desconto de bounces/erros)</td>
+        <td><strong>~26–54 acessos à página</strong></td>
+        <td>Estimativa conservadora de entrega de link</td>
+      </tr>
+      <tr>
+        <td>Formulários preenchidos</td>
+        <td>Acessos à página</td>
+        <td>~26–54 acessos</td>
+        <td class="highlight-cell">20–30% conversão clique → formulário</td>
+        <td><strong>~5–16 formulários</strong></td>
+        <td>Referência de mercado B2B para material rico. Sem dado histórico próprio da Qive.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="card" style="margin-top: 20px; border-left: 3px solid var(--orange);">
+    <p style="color: var(--dark); font-size: 13px;"><strong>Nota metodológica:</strong> as taxas de clique sobre abertos (6–10%) foram derivadas das campanhas de nutrição CRM mais recentes (Webinar RT, maio/junho 2026), convertendo as taxas de clique sobre entregues para a base de abertos. A taxa de conversão de clique para formulário (20–30%) é referência de mercado B2B para materiais ricos, pois a Qive não possui histórico próprio para esse indicador — o dado real deve ser acompanhado após os primeiros disparos e usado para calibrar a projeção. Para rastrear cada etapa do funil, recomenda-se: UTM por canal e disparo (utm_source=email / utm_medium=crm / utm_campaign=panorama-logistica-jul26 / utm_content=email1); integração de analytics na página do Panorama para capturar acessos; e registro de formulários preenchidos como evento de conversão no HubSpot. O link do capítulo específico de logística está marcado como [PLACEHOLDER] e deve ser atualizado antes dos disparos da semana 3.</p>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  Campanha desenvolvida pela equipe de Growth Marketing · <span>Qive</span> · Julho 2026
+</footer>
+
+<script>
+function copyText(id, btn) {
+  const el = document.getElementById(id);
+  const text = el.innerText || el.textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ Copiado!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '📋 Copiar copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(() => {
+    // fallback para navegadores sem suporte
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = '✓ Copiado!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '📋 Copiar copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>
